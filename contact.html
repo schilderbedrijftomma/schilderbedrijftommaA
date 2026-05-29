@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="nl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schildersbedrijf Tomma | Contact & Offerte</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #2d3748; background-color: #f7fafc; padding-top: 70px; }
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #1a202c; text-decoration: none; }
+        .logo span { color: #3182ce; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { text-decoration: none; color: #4a5568; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: #3182ce; }
+        
+        /* Dwukolumnowy układ strony */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; }
+        h2 { grid-column: 1 / -1; text-align: center; margin-bottom: 10px; font-size: 2.25rem; }
+        
+        /* Lewa kolumna: Dane kontaktowe */
+        .contact-card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content; }
+        .info-item { margin-bottom: 20px; font-size: 1.1rem; }
+        .info-item a { color: #3182ce; text-decoration: none; font-weight: 600; }
+        
+        /* Prawa kolumna: Formularz */
+        .form-card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .form-card h3 { margin-bottom: 20px; color: #1a202c; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.95rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #3182ce; box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1); }
+        
+        .btn-submit { display: inline-block; width: 100%; background: #3182ce; color: #fff; border: none; padding: 12px; font-size: 1rem; font-weight: 600; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        .btn-submit:hover { background: #2b6cb0; }
+        
+        footer { text-align: center; padding: 20px; background: #1a202c; color: #718096; margin-top: 60px; }
+
+        /* Dostosowanie do telefonów */
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style></head><body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Tomma<span>Schilders</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projecten.html">Projecten</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Contact & Gratis Offerte</h2>
+        
+        <div class="contact-card">
+            <div class="info-item">
+                <p><strong>📞 Telefoon:</strong></p>
+                <a href="tel:+31654967900">+31 654 967 900</a>
+            </div>
+            <div class="info-item">
+                <p><strong>✉️ E-mail:</strong></p>
+                <a href="mailto:tomma.info@gmail.com">tomma.info@gmail.com</a>
+            </div>
+            <div class="info-item">
+                <p><strong>📍 Adres:</strong></p>
+                <p>Verveenstraat 19, 2651EX Berkel en Rodenrijs</p>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h3>Vraag een gratis offerte aan</h3>
+            <form action="https://formspree.io/f/xojbbwzb" method="POST">
+                <div class="form-group">
+                    <label for="name">Naam *</label>
+                    <input type="text" id="name" name="name" required placeholder="Uw voor- en achternaam">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mailadres *</label>
+                    <input type="email" id="email" name="email" required placeholder="uw@email.nl">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefoonnummer</label>
+                    <input type="tel" id="phone" name="phone" placeholder="06 12345678">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Type klus (Rodzaj usługi)</label>
+                    <select id="service" name="service">
+                        <option value="Buitenschilderwerk">Buitenschilderwerk (Malowanie zewnętrzne)</option>
+                        <option value="Binnenschilderwerk">Binnenschilderwerk (Malowanie wewnętrzne)</option>
+                        <option value="Houtrot reparatie">Houtrot reparatie (Naprawa drewna)</option>
+                        <option value="Anders">Anders / Overig (Inne)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Beschrijving van de klus *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Wat moet er gebeuren? Geef zoveel mogelijk details..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Verzend Aanvraag</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Schildersbedrijf Tomma. Alle rechten voorbehouden.</p>
+    </footer></body></html>
