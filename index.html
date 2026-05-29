@@ -3,166 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schildersbedrijf Tomma | Vakmanschap met 25 jaar ervaring</title>
+    <title>Schildersbedrijf Tomma | Uw Schilder in Berkel en Rodenrijs</title>
     <style>
-        /* Reset i style podstawowe */
+        /* Nowoczesny Reset i Czcionka */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #333333;
-            background-color: #f8f9fa;
+            color: #2d3748;
+            background-color: #f7fafc;
         }
 
-        /* Nagłówek (Hero Section) */
+        /* Sekcja Główna (Hero) z nowoczesnym gradientem */
         header {
-            background: linear-gradient(rgba(26, 37, 48, 0.85), rgba(26, 37, 48, 0.85)), url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 36, 43, 0.95) 0%, rgba(44, 62, 80, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             color: #ffffff;
-            padding: 100px 20px;
+            padding: 140px 20px;
             text-align: center;
         }
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
         }
         header p {
-            font-size: 1.4rem;
-            color: #3498db;
-            font-weight: 600;
-            margin-bottom: 30px;
+            font-size: 1.5rem;
+            color: #3182ce;
+            font-weight: 500;
+            margin-bottom: 35px;
         }
+        
+        /* Nowoczesne przyciski */
         .btn-contact {
             display: inline-block;
-            background-color: #3498db;
+            background-color: #3182ce;
             color: #ffffff;
-            padding: 12px 30px;
+            padding: 14px 35px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(49, 130, 206, 0.4);
+            transition: all 0.3s ease;
         }
         .btn-contact:hover {
-            background-color: #2980b9;
+            background-color: #2b6cb0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.6);
         }
 
-        /* Główny kontener */
+        /* Kontener i Sekcje */
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
-
-        /* Sekcje */
         section {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
         section h2 {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
-            color: #1a252f;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a202c;
         }
-        section h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #3498db;
-            margin: 10px auto 0 auto;
-        }
-
-        /* O nas / Intro */
-        .intro-text {
+        .section-subtitle {
             text-align: center;
-            max-width: 850px;
-            margin: 0 auto;
-            font-size: 1.15rem;
-            color: #444444;
+            color: #718096;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
         }
 
-        /* Karty usług */
+        /* Sekcja Over Ons (Karta) */
+        .about-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-card p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        .badge {
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Nowoczesny Grid Usług */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
         .service-card {
             background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-left: 5px solid #3498db;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #edf2f7;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #3182ce;
+        }
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: inline-block;
         }
         .service-card h3 {
-            margin-bottom: 10px;
-            color: #1a252f;
-            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #1a202c;
+            font-size: 1.4rem;
         }
         .service-card p {
-            font-size: 0.95rem;
-            color: #666666;
+            color: #718096;
+            font-size: 1rem;
+        }
+        .warranty-tag {
+            display: inline-block;
+            background: #c6f6d5;
+            color: #22543d;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-top: 10px;
         }
 
-        /* Sekcja Kontakt */
-        .contact-wrapper {
-            background-color: #1a252f;
+        /* Nowoczesna Sekcja Kontakt */
+        .contact-box {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             color: #ffffff;
-            border-radius: 8px;
-            padding: 40px;
+            border-radius: 24px;
+            padding: 50px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .contact-info h3 {
-            color: #3498db;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        .contact-info p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-        .contact-details {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 5px;
-        }
-        .contact-details p {
-            margin-bottom: 15px;
-            display: flex;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             align-items: center;
-            gap: 10px;
-            font-size: 1.05rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
-        .contact-details a {
-            color: #ffffff;
+        .contact-text h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .contact-text p {
+            color: #a0aec0;
+            font-size: 1.1rem;
+        }
+        .contact-links {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .contact-item {
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+        }
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        .contact-item a {
+            color: #fff;
             text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
         }
-        .contact-details a:hover {
-            text-decoration: underline;
-            color: #3498db;
+        .contact-item a:hover {
+            color: #3182ce;
+        }
+        .contact-label {
+            display: block;
+            font-size: 0.85rem;
+            color: #a0aec0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
         }
 
         /* Stopka */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #11181f;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+            padding: 30px;
+            background-color: #1a202c;
+            color: #718096;
+            font-size: 0.95rem;
+            border-top: 1px solid #2d3748;
         }
 
-        /* Responsywność */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
+        /* RWD (Responsywność na telefony) */
+        @media (max-width: 850px) {
+            header h1 { font-size: 2.5rem; }
             header p { font-size: 1.2rem; }
-            .contact-wrapper { padding: 25px; }
+            .contact-box { grid-template-columns: 1fr; padding: 30px; }
+            .badge-container { flex-direction: column; align-items: center; gap: 10px; }
         }
     </style>
 </head>
@@ -171,59 +233,89 @@
     <header>
         <h1>Schildersbedrijf Tomma</h1>
         <p>Vakmanschap met 25 jaar ervaring</p>
-        <a href="#contact" class="btn-contact">Neem Contact Op</a>
+        <a href="#contact" class="btn-contact">Vrijblijvende Offerte</a>
     </header>
 
     <div class="container">
 
         <section id="over-ons">
             <h2>Over Ons</h2>
-            <p class="intro-text">
-                <strong>Schildersbedrijf Tomma</strong> is een ervaren en betrouwbaar schildersbedrijf gevestigd in <strong>Berkel en Rodenrijs</strong>. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder- en onderhoudswerk voor villa’s, eengezinswoningen, VvE’s en monumentale panden. Bij ons staat kwaliteit en duurzaamheid centraal.
-            </p>
-        </section>
-
-        <section id="diensten">
-            <h2>Wij zijn gespecialiseerd in:</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Buitenschilderwerk</h3>
-                    <p>Hoogwaardige bescherming voor uw gevels en kozijnen. Tot 10 jaar garantie mogelijk.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Binnenschilderwerk</h3>
-                    <p>Strak en nauwkeurig schilderwerk voor wanden, plafonds en binnenkozijnen.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Behangwerk en stucwerk</h3>
-                    <p>Professionele wandafwerking voor een egale en moderne uitstraling van uw muren.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Glaswerk</h3>
-                    <p>Levering en vakkundige plaatsing van diverse soorten glas.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Houtreparaties en timmerwerk</h3>
-                    <p>Herstel van houtrot en vakkundig timmerwerk om uw woning in topconditie te houden.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Ramen en deuren</h3>
-                    <p>Onderhoud, schilderen en afstellen van al uw binnen- en buitenramen en deuren.</p>
+            <p class="section-subtitle">Betrouwbaarheid en kwaliteit in Berkel en Rodenrijs</p>
+            <div class="about-card">
+                <p>
+                    <strong>Schildersbedrijf Tomma</strong> is een ervaren en betrouwbaar schildersbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder- en onderhoudswerk voor villa’s, eengezinswoningen, VvE’s en monumentale panden.
+                </p>
+                <div class="badge-container">
+                    <span class="badge">✓ 25+ Jaar Ervaring</span>
+                    <span class="badge">✓ Hoge Kwaliteit</span>
+                    <span class="badge">✓ Betrouwbare Service</span>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Vraag een vrijblijvende offerte aan</h3>
-                    <p>Bent u op zoek naar een professionele schilder in Berkel en Rodenrijs of omgeving? Neem gerust contact met ons op voor advies of een op maat gemaakte offerte.</p>
+        <section id="diensten">
+            <h2>Onze Specialisaties</h2>
+            <p class="section-subtitle">Waarmee kunnen wij u van dienst zijn?</p>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <span class="service-icon">🏡</span>
+                    <h3>Buitenschilderwerk</h3>
+                    <p>Duurzame bescherming van uw gevels en kozijnen tegen alle weersinvloeden.</p>
+                    <span class="warranty-tag">Tot 10 jaar garantie mogelijk</span>
                 </div>
-                <div class="contact-details">
-                    <p><strong>📞 Telefoon:</strong> <a href="tel:+31654967900">+31 654 967 900</a></p>
-                    <p><strong>✉️ E-mail:</strong> <a href="mailto:tomma.info@gmail.com">tomma.info@gmail.com</a></p>
-                    <p><strong>📍 Adres:</strong> Verveenstraat 19, 2651EX Berkel en Rodenrijs</p>
+
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Binnenschilderwerk</h3>
+                    <p>Strak en nauwkeurig schilderwerk voor een frisse en moderne uitstraling van uw interieur.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Behang- & Stucwerk</h3>
+                    <p>Professionele wandafwerking voor perfect egale en prachtig afgewerkte muren.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">💎</span>
+                    <h3>Glaswerk</h3>
+                    <p>Levering en vakkundige plaatsing van diverse soorten isolatie- en monumentenglas.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🪵</span>
+                    <h3>Houtreparatie & Timmerwerk</h3>
+                    <p>Herstel van houtrot en vakkundige aanpassingen om uw houtwerk in topconditie te houden.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🚪</span>
+                    <h3>Ramen & Deuren</h3>
+                    <p>Grondig onderhoud, strak schilderwerk en het perfect afstellen van al uw hang- en sluitwerk.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-box">
+                <div class="contact-text">
+                    <h3>Klaar voor een nieuw project?</h3>
+                    <p>Neem vandaag nog contact met ons op voor een vrijblijvend adviesgesprek of een offerte op maat. Wij denken graag met u mee!</p>
+                </div>
+                <div class="contact-links">
+                    <div class="contact-item">
+                        <span class="contact-label">Telefoon</span>
+                        <a href="tel:+31654967900">+31 654 967 900</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">E-mail</span>
+                        <a href="mailto:tomma.info@gmail.com">tomma.info@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Adres</span>
+                        <a href="https://maps.google.com/?q=Verveenstraat+19,+2651EX+Berkel+en+Rodenrijs" target="_blank">Verveenstraat 19, 2651EX Berkel en Rodenrijs</a>
+                    </div>
                 </div>
             </div>
         </section>
