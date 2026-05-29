@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schildersbedrijf Tomma | Vakmanschap met 25 jaar ervaring</title>
+    <style>
+        /* Reset i style podstawowe */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f8f9fa;
+        }
+
+        /* Nagłówek (Hero Section) */
+        header {
+            background: linear-gradient(rgba(26, 37, 48, 0.85), rgba(26, 37, 48, 0.85)), url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.4rem;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .btn-contact {
+            display: inline-block;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .btn-contact:hover {
+            background-color: #2980b9;
+        }
+
+        /* Główny kontener */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Sekcje */
+        section {
+            margin-bottom: 60px;
+        }
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            color: #1a252f;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 10px auto 0 auto;
+        }
+
+        /* O nas / Intro */
+        .intro-text {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #444444;
+        }
+
+        /* Karty usług */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid #3498db;
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: #1a252f;
+            font-size: 1.25rem;
+        }
+        .service-card p {
+            font-size: 0.95rem;
+            color: #666666;
+        }
+
+        /* Sekcja Kontakt */
+        .contact-wrapper {
+            background-color: #1a252f;
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .contact-info h3 {
+            color: #3498db;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        .contact-details {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 5px;
+        }
+        .contact-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+        }
+        .contact-details a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+            color: #3498db;
+        }
+
+        /* Stopka */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #11181f;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1.2rem; }
+            .contact-wrapper { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Schildersbedrijf Tomma</h1>
+        <p>Vakmanschap met 25 jaar ervaring</p>
+        <a href="#contact" class="btn-contact">Neem Contact Op</a>
+    </header>
+
+    <div class="container">
+
+        <section id="over-ons">
+            <h2>Over Ons</h2>
+            <p class="intro-text">
+                <strong>Schildersbedrijf Tomma</strong> is een ervaren en betrouwbaar schildersbedrijf gevestigd in <strong>Berkel en Rodenrijs</strong>. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder- en onderhoudswerk voor villa’s, eengezinswoningen, VvE’s en monumentale panden. Bij ons staat kwaliteit en duurzaamheid centraal.
+            </p>
+        </section>
+
+        <section id="diensten">
+            <h2>Wij zijn gespecialiseerd in:</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Buitenschilderwerk</h3>
+                    <p>Hoogwaardige bescherming voor uw gevels en kozijnen. Tot 10 jaar garantie mogelijk.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Binnenschilderwerk</h3>
+                    <p>Strak en nauwkeurig schilderwerk voor wanden, plafonds en binnenkozijnen.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Behangwerk en stucwerk</h3>
+                    <p>Professionele wandafwerking voor een egale en moderne uitstraling van uw muren.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Glaswerk</h3>
+                    <p>Levering en vakkundige plaatsing van diverse soorten glas.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Houtreparaties en timmerwerk</h3>
+                    <p>Herstel van houtrot en vakkundig timmerwerk om uw woning in topconditie te houden.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ramen en deuren</h3>
+                    <p>Onderhoud, schilderen en afstellen van al uw binnen- en buitenramen en deuren.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Vraag een vrijblijvende offerte aan</h3>
+                    <p>Bent u op zoek naar een professionele schilder in Berkel en Rodenrijs of omgeving? Neem gerust contact met ons op voor advies of een op maat gemaakte offerte.</p>
+                </div>
+                <div class="contact-details">
+                    <p><strong>📞 Telefoon:</strong> <a href="tel:+31654967900">+31 654 967 900</a></p>
+                    <p><strong>✉️ E-mail:</strong> <a href="mailto:tomma.info@gmail.com">tomma.info@gmail.com</a></p>
+                    <p><strong>📍 Adres:</strong> Verveenstraat 19, 2651EX Berkel en Rodenrijs</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Schildersbedrijf Tomma. Alle rechten voorbehouden.</p>
+    </footer>
+
+</body>
+</html>
