@@ -293,7 +293,7 @@
         }
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
         .gallery-item {
@@ -305,7 +305,7 @@
             cursor: pointer;
         }
         .gallery-img {
-            height: 280px;
+            height: 320px;
             background-size: cover;
             background-position: center;
         }
@@ -343,8 +343,11 @@
             color: white;
             padding: 40px;
             border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
-        .contact-sidebar h3 { font-size: 1.8rem; margin-bottom: 25px; color: #feebc8; }
+        .contact-sidebar h3 { font-size: 1.8rem; margin-bottom: 5px; color: #feebc8; }
         .info-link { color: #fff; text-decoration: none; font-weight: 600; }
         .info-link:hover { color: #feebc8; }
          
@@ -463,7 +466,7 @@
             <p class="section-subtitle">Betrouwbaarheid en pure kwaliteit in Berkel en Rodenrijs</p>
             <div class="about-card">
                 <p>
-                    Wij zijn een ervaren en betrouwbaar schildersbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder- en onderhoudswerk voor villa’s, eengezinswoningen, VvE’s i monumentale panden.
+                    Wij zijn een ervaren en betrouwbaar schildersbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder- en onderhoudswerk voor villa’s, eengezinswoningen, VvE’s en monumentale panden.
                 </p>
                 <div class="stats-grid">
                     <div class="stat-item"><h4><span class="counter" data-target="25">0</span>+</h4><p>Jaar Ervaring</p></div>
@@ -479,7 +482,7 @@
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>🏡 Buitenschilderwerk</h3>
-                    <p>Duurzame bescherming van uw gevels, ramen en kozijnen tegen alle Nederlandse weersinvloeden.</p>
+                    <p>Duurzame bescherming van uw gevels, ramen i kozijnen tegen alle Nederlandse weersinvloeden.</p>
                     <span class="warranty-tag">Tot 10 jaar garantie mogelijk</span>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
@@ -517,35 +520,19 @@
 
             <div class="gallery-grid">
                 
-                <div class="gallery-item" data-category="buiten" data-aos="zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80')"></div>
+                <div class="gallery-item" data-category="buiten" data-aos="zoom-in" onclick="openLightbox('./image_4c7484.jpg')">
+                    <div class="gallery-img" style="background-image: url('./image_4c7484.jpg')"></div>
                     <div class="gallery-info">
-                        <h3>Modern Landhuis</h3>
-                        <p>Compleet buitenschilderwerk en gevelbescherming.</p>
+                        <h3>Buitenschilderwerk</h3>
+                        <p>Grondige gevelrenovatie en strak lakwerk voor kozijnen.</p>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-category="binnen" data-aos="zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80')"></div>
+                <div class="gallery-item" data-category="binnen" data-aos="zoom-in" onclick="openLightbox('./image_4c70fd.jpg')">
+                    <div class="gallery-img" style="background-image: url('./image_4c70fd.jpg')"></div>
                     <div class="gallery-info">
-                        <h3>Luxe Woonkamer</h3>
-                        <p>Strakke afwerking van wanden en plafonds.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="buiten" data-aos="zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80')"></div>
-                    <div class="gallery-info">
-                        <h3>Kozijnen & Deuren</h3>
-                        <p>Hoogglans lakwerk voor een duurzaam en glanzend resultaat.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="binnen" data-aos="zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80')"></div>
-                    <div class="gallery-info">
-                        <h3>Moderne Keuken</h3>
-                        <p>Schilderwerk bestand tegen vocht en vet.</p>
+                        <h3>Binnenschilderwerk</h3>
+                        <p>Nauwkeurig sauswerk en perfecte wandafwerking binnenshuis.</p>
                     </div>
                 </div>
 
@@ -561,12 +548,30 @@
             <h2>Contact & Offerte</h2>
             <p class="section-subtitle">Vraag direct een vrijblijvende prijsopgave aan</p>
             <div class="contact-box">
+                
                 <div class="contact-sidebar">
                     <h3>Contactgegevens</h3>
-                    <p style="margin-bottom: 25px;">Heeft u vragen of wilt u een afspraak maken? Neem direct contact op. Wij staan voor u klaar.</p>
-                    <p><strong>📞 Telefoon:</strong><br><a href="tel:+31654967900" class="info-link">+31 654 967 900</a></p><br>
-                    <p><strong>✉️ E-mail:</strong><br><a href="mailto:tomma.info@gmail.com" class="info-link">tomma.info@gmail.com</a></p><br>
-                    <p><strong>📍 Adres:</strong><br>Verveenstraat 19,<br>2651EX Berkel en Rodenrijs</p>
+                    <p style="margin-bottom: 5px;">Heeft u vragen of wilt u een afspraak maken? Neem contact op via een van de onderstaande opties:</p>
+                    
+                    <div>
+                        <strong>📞 1. Telefoon:</strong><br>
+                        <a href="tel:+31654967900" class="info-link">+31 654 967 900</a>
+                    </div>
+                    
+                    <div>
+                        <strong>✉️ 2. E-mail:</strong><br>
+                        <a href="mailto:tomma.info@gmail.com" class="info-link">tomma.info@gmail.com</a>
+                    </div>
+                    
+                    <div>
+                        <strong>📍 3. Adres:</strong><br>
+                        <span>Verveenstraat 19, 2651EX Berkel en Rodenrijs</span>
+                    </div>
+
+                    <div>
+                        <strong>💼 4. Bedrijfsgegevens:</strong><br>
+                        <span>KvK: 84930211 | BTW: NL863402199B01</span>
+                    </div>
                 </div>
                  
                 <form class="contact-form" action="https://formspree.io/f/xojbbwzb" method="POST">
@@ -647,7 +652,7 @@
         function openLightbox(url) { lightboxImg.src = url; lightbox.classList.add('active'); }
         function closeLightbox() { lightbox.classList.remove('active'); }
 
-        // OBSŁUGA MODALA (WYSKAKUJĄCE OKIENKO SZYBKIEGO KONTAKTU)
+        // OBSŁUGA MODALA
         const contactModal = document.getElementById('contactModal');
         function openModal() { contactModal.classList.add('active'); }
         function closeModal(e, force = false) {
