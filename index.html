@@ -92,7 +92,7 @@
         .logo-main {
             font-size: 1.4rem;
             font-weight: 900;
-            color: var(--accent-green); /* Zmieniono na premium zielony */
+            color: var(--accent-green);
             line-height: 1.1;
         }
         
@@ -465,13 +465,13 @@
         .lightbox.active .lightbox-img { transform: scale(1); }
         .lightbox-close { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 3.5rem; font-weight: 300; cursor: pointer; }
 
-        /* CONTACT & FORM */
+        /* CONTACT & FORM (ZINTEGROWANA MAPA GOOGLE) */
         .contact-box {
             background: var(--card-bg);
             border-radius: 32px;
             padding: 55px;
             display: grid;
-            grid-template-columns: 1fr 1.35fr;
+            grid-template-columns: 1.25fr 1fr;
             gap: 50px;
             box-shadow: 0 30px 70px var(--shadow-color);
             border: 1px solid var(--card-border);
@@ -480,27 +480,33 @@
         .contact-sidebar {
             background: linear-gradient(135deg, #14532d 0%, #166534 100%);
             color: white;
-            padding: 45px 40px;
+            padding: 40px;
             border-radius: 24px;
             box-shadow: 0 15px 35px rgba(20, 83, 45, 0.2);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 24px;
         }
-        .contact-sidebar h3 { font-size: 1.9rem; margin-bottom: 20px; color: #fef08a; font-weight: 900; letter-spacing: -0.5px; }
-        .contact-sidebar p { font-size: 1.05rem; opacity: 0.95; line-height: 1.7; }
+        .contact-sidebar h3 { font-size: 1.9rem; color: #fef08a; font-weight: 900; letter-spacing: -0.5px; }
+        .contact-sidebar p { font-size: 1.05rem; opacity: 0.95; line-height: 1.6; }
         .info-link { color: #fff; text-decoration: none; font-weight: 700; display: inline-block; }
         .info-link:hover { color: #fef08a; transform: translateX(5px); }
         
-        .sidebar-bottom-badges {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            border-top: 1px solid rgba(255,255,255,0.12);
-            padding-top: 25px;
+        /* Map Container Styling */
+        .map-wrapper {
+            width: 100%;
+            height: 230px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin-top: auto;
         }
-        .sidebar-badge { display: flex; align-items: center; gap: 12px; font-size: 0.98rem; font-weight: 600; }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         .form-trust-bar {
             display: flex;
@@ -641,6 +647,7 @@
             .container { padding: 60px 16px; }
             
             .gallery-overlay { display: none !important; }
+            .map-wrapper { height: 260px; }
         }
     </style>
 </head>
@@ -678,10 +685,10 @@
 
         <section id="over-ons">
             <h2>Over Ons Bedrijf</h2>
-            <p class="section-subtitle">Betrouwbaarheid en pure kwaliteit in Berkel en Rodenrijs</p>
+            <p class="section-subtitle">Betrouwbaarheid i pure kwaliteit in Berkel en Rodenrijs</p>
             <div class="about-card">
                 <p>
-                    Wij zijn een ervaren i betrouwbaar schilders- en klussenbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder-, onderhouds- en renovatiewerk voor villa’s, eengezinswoningen, VvE’s en bedrijfspanden.
+                    Wij zijn een ervaren en betrouwbaar schilders- en klussenbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder-, onderhouds- en renovatiewerk voor villa’s, eengezinswoningen, VvE’s en bedrijfspanden.
                 </p>
                 <div class="stats-grid">
                     <div class="stat-item"><h4><span class="counter" data-target="25">0</span>+</h4><p>Jaar Ervaring</p></div>
@@ -791,21 +798,7 @@
             <h2>Offerte Aanvragen</h2>
             <p class="section-subtitle">Deel uw plannen en ontvang snel een vrijblijvende prijsopgave</p>
             <div class="contact-box">
-                <div class="contact-sidebar">
-                    <div>
-                        <h3>Contactgegevens</h3>
-                        <p style="margin-bottom: 25px;">Heeft u liever direct persoonlijk contact? Bel of mail ons gerust.</p>
-                        <p style="margin-bottom: 12px;"><strong>📞 Telefoon:</strong><br><a href="tel:+31654967900" class="info-link">+31 654 967 900</a></p>
-                        <p style="margin-bottom: 12px;"><strong>✉️ E-mail:</strong><br><a href="mailto:tomma.info@gmail.com" class="info-link">tomma.info@gmail.com</a></p>
-                        <p><strong>📍 Adres:</strong><br>Verveenstraat 19, 2651EX Berkel en Rodenrijs</p>
-                    </div>
-                    <div class="sidebar-bottom-badges">
-                        <div class="sidebar-badge">🛡️ Volledig WA-verzekerd</div>
-                        <div class="sidebar-badge">⏱️ Reactie binnen 48 uur</div>
-                        <div class="sidebar-badge">💎 100% Tevredenheidsgarantie</div>
-                    </div>
-                </div>
-                 
+                
                 <div>
                     <div class="form-trust-bar">
                         <span>✨ 100% Gratis & Vrijblijvend</span>
@@ -862,6 +855,26 @@
                         </button>
                     </form>
                 </div>
+
+                <div class="contact-sidebar">
+                    <div>
+                        <h3>Contactgegevens</h3>
+                        <p style="margin-bottom: 20px;">Heeft u liever direct persoonlijk contact? Bel of mail ons gerust.</p>
+                        <p style="margin-bottom: 10px;"><strong>📞 Telefoon:</strong><br><a href="tel:+31654967900" class="info-link">+31 654 967 900</a></p>
+                        <p style="margin-bottom: 10px;"><strong>✉️ E-mail:</strong><br><a href="mailto:tomma.info@gmail.com" class="info-link">tomma.info@gmail.com</a></p>
+                        <p style="margin-bottom: 5px;"><strong>📍 Adres:</strong><br>Verveenstraat 19, 2651EX Berkel en Rodenrijs</p>
+                    </div>
+                    
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.4025067219574!2d4.480737077189569!3d51.99808937192942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4cb8c9cfa95cb%3A0x633b946013a71107!2sVerveenstraat%2019%2C%202651%20EX%20Berkel%20en%20Rodenrijs!5e0!3m2!1snl!2snl!4v1710000000000!5m2!1snl!2snl" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
             </div>
         </section>
 
