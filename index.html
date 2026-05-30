@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schildersbedrijf Berkel en Rodenrijs | Vakmanschap & Kwaliteit</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
+        /* Zmienne CSS dla płynnego przełączania Dark Mode */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #2d3748;
+            --card-bg: #ffffff;
+            --card-border: #edf2f7;
+            --sub-text: #718096;
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --body-bg: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a202c;
+            --text-color: #e2e8f0;
+            --card-bg: #2d3748;
+            --card-border: #4a5568;
+            --sub-text: #a0aec0;
+            --nav-bg: rgba(26, 32, 44, 0.85);
+            --body-bg: #1a202c;
+        }
+
         /* Reset i Czcionka */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
         html {
             scroll-behavior: smooth;
@@ -17,18 +40,20 @@
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #2d3748;
-            background-color: #ffffff;
+            color: var(--text-color);
+            background-color: var(--body-bg);
             padding-top: 80px;
         }
 
-        /* NAWIGACJA (NAVBAR) */
+        /* NAWIGACJA Z EFEKTEM GLASSMORPHISM */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: #ffffff;
+            background-color: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             z-index: 1000;
         }
@@ -52,12 +77,12 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
             align-items: center;
         }
         .nav-links a {
             text-decoration: none;
-            color: #4a5568;
+            color: var(--text-color);
             font-weight: 600;
             transition: color 0.2s;
         }
@@ -74,6 +99,18 @@
         }
         .nav-btn:hover {
             background-color: #c05621;
+        }
+
+        /* Przełącznik Dark Mode */
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* HERO SECTION */
@@ -137,25 +174,25 @@
         }
         .section-subtitle {
             text-align: center;
-            color: #718096;
+            color: var(--sub-text);
             margin-bottom: 50px;
             font-size: 1.15rem;
         }
 
         /* OVER ONS */
         .about-card {
-            background: #ffffff;
+            background: var(--card-bg);
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
             text-align: center;
             max-width: 900px;
             margin: 0 auto 50px auto;
-            border: 1px solid #edf2f7;
+            border: 1px solid var(--card-border);
         }
         .about-card p {
             font-size: 1.2rem;
-            color: #4a5568;
+            color: var(--text-color);
             margin-bottom: 25px;
         }
         .stats-grid {
@@ -170,10 +207,20 @@
             border-radius: 12px;
             border: 1px solid #c6f6d5;
         }
+        [data-theme="dark"] .stat-item {
+            background: #234e32;
+            border-color: #2f855a;
+        }
         .stat-item h4 {
             font-size: 2rem;
             color: #276749;
             font-weight: 800;
+        }
+        [data-theme="dark"] .stat-item h4 {
+            color: #9ae6b4;
+        }
+        [data-theme="dark"] .stat-item p {
+            color: #e2e8f0;
         }
 
         /* DIENSTEN */
@@ -183,12 +230,12 @@
             gap: 30px;
         }
         .service-card {
-            background: #ffffff;
+            background: var(--card-bg);
             padding: 35px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
             transition: all 0.3s ease;
-            border: 1px solid #edf2f7;
+            border: 1px solid var(--card-border);
         }
         .service-card:hover {
             transform: translateY(-5px);
@@ -198,6 +245,9 @@
             margin-bottom: 12px;
             color: #276749;
             font-size: 1.35rem;
+        }
+        [data-theme="dark"] .service-card h3 {
+            color: #68d391;
         }
         .warranty-tag {
             display: inline-block;
@@ -210,7 +260,7 @@
             margin-top: 10px;
         }
 
-        /* WERKWIJZE (Klasyczny styl z boksami) */
+        /* WERKWIJZE (Klasyczny układ boksów) */
         .process-box {
             background: #276749;
             color: white;
@@ -234,6 +284,13 @@
             border-radius: 12px;
             text-align: center;
         }
+        .step h4 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .step p {
+            color: #e2e8f0;
+        }
         .step-num {
             font-size: 2rem;
             font-weight: 800;
@@ -241,23 +298,28 @@
             margin-bottom: 10px;
         }
 
-        /* ONS WERK */
+        /* ONS WERK Z INTERAKTYWNĄ GALERIĄ */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         .gallery-item {
-            background: #fff;
+            background: var(--card-bg);
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            border: 1px solid #edf2f7;
+            border: 1px solid var(--card-border);
+            cursor: pointer;
         }
         .gallery-img {
             height: 320px;
             background-size: cover;
             background-position: center;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.03);
         }
         .gallery-info {
             padding: 20px;
@@ -266,17 +328,60 @@
             color: #276749;
             margin-bottom: 8px;
         }
+        [data-theme="dark"] .gallery-info h3 {
+            color: #68d391;
+        }
+
+        /* ELEMENTY SYSTEMU LIGHTBOX (ZDJĘCIE NA PEŁEN EKRAN) */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .lightbox.active .lightbox-img {
+            transform: scale(1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
         /* CONTACT */
         .contact-box {
-            background: #ffffff;
+            background: var(--card-bg);
             border-radius: 24px;
             padding: 40px;
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 40px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
-            border: 1px solid #edf2f7;
+            border: 1px solid var(--card-border);
         }
         .contact-sidebar {
             background: linear-gradient(135deg, #276749 0%, #1c4d35 100%);
@@ -309,13 +414,15 @@
         .form-group label {
             font-size: 0.9rem;
             font-weight: 600;
-            color: #4a5568;
+            color: var(--text-color);
         }
         .form-group input, .form-group textarea, .form-group select {
             padding: 12px;
             border: 1px solid #cbd5e0;
             border-radius: 8px;
             font-size: 1rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
         .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
             outline: none;
@@ -363,6 +470,7 @@
                 <li><a href="#diensten">Diensten</a></li>
                 <li><a href="#werkwijze">Werkwijze</a></li>
                 <li><a href="#ons-werk">Ons Werk</a></li>
+                <li><button class="theme-toggle" id="themeToggle" title="Verander thema">🌙</button></li>
                 <li><a href="#contact" class="nav-btn">Offerte Aanvragen</a></li>
             </ul>
         </div>
@@ -376,7 +484,7 @@
 
     <div class="container">
 
-        <section id="over-ons">
+        <section id="over-ons" data-aos="fade-up">
             <h2>Over Ons Bedrijf</h2>
             <p class="section-subtitle">Betrouwbaarheid en pure kwaliteit in Berkel en Rodenrijs</p>
             <div class="about-card">
@@ -395,35 +503,35 @@
             <h2>Onze Specialisaties</h2>
             <p class="section-subtitle">Waarmee kunnen wij u vakkundig van dienst zijn?</p>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>🏡 Buitenschilderwerk</h3>
                     <p>Duurzame bescherming van uw gevels, ramen en kozijnen tegen alle Nederlandse weersinvloeden.</p>
                     <span class="warranty-tag">Tot 10 jaar garantie mogelijk</span>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>🎨 Binnenschilderwerk</h3>
                     <p>Strak en nauwkeurig schilderwerk voor wanden, plafonds, binnenkozijnen en trappen.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <h3>📄 Behang- & Stucwerk</h3>
                     <p>Professionele wandafwerking voor perfect egale en prachtig afgewerkte muren.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>💎 Glaswerk</h3>
                     <p>Levering en vakkundige plaatsing van diverse soorten moderne isolatie- en HR++ glas.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>🪵 Houtreparatie & Timmerwerk</h3>
-                    <p>Herstel van houtrot i vakkundige aanpassingen om uw houtwerk in topconditie te houden.</p>
+                    <p>Herstel van houtrot en vakkundige aanpassingen om uw houtwerk in topconditie te houden.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <h3>🚪 Ramen & Deuren</h3>
                     <p>Grondig onderhoud, strak schilderwerk en het perfect afstellen van al uw hang- en sluitwerk.</p>
                 </div>
             </div>
         </section>
 
-        <section id="werkwijze">
+        <section id="werkwijze" data-aos="fade-up">
             <div class="process-box">
                 <h3>Onze Werkwijze</h3>
                 <div class="steps-grid">
@@ -437,26 +545,34 @@
 
         <section id="ons-werk">
             <h2>Ons Recente Werk</h2>
-            <p class="section-subtitle">Een greep uit onze gerealiseerde projecten</p>
+            <p class="section-subtitle">Een greep uit onze gerealiseerde projecten (Klik op een foto voor grotere weergave)</p>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80')"></div>
+                
+                <div class="gallery-item" data-aos="fade-right" onclick="openLightbox('image_4c7484.jpg')">
+                    <div class="gallery-img" style="background-image: url('image_4c7484.jpg')"></div>
                     <div class="gallery-info">
                         <h3>Buitenschilderwerk</h3>
                         <p>Volledig onderhoud, reiniging en professioneel lakwerk van kozijnen, deuren en gevelelementen.</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80')"></div>
+
+                <div class="gallery-item" data-aos="fade-left" onclick="openLightbox('image_4c70fd.jpg')">
+                    <div class="gallery-img" style="background-image: url('image_4c70fd.jpg')"></div>
                     <div class="gallery-info">
                         <h3>Binnenschilderwerk</h3>
                         <p>Strakke wandafwerking, sauswerk van plafonds en nauwkeurig schilderwerk binnenshuis.</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <section id="contact">
+        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-img" id="lightboxImg" src="" alt="Grotere weergave">
+        </div>
+
+        <section id="contact" data-aos="fade-up">
             <h2>Contact & Offerte</h2>
             <p class="section-subtitle">Vraag direct een vrijblijvende prijsopgave aan</p>
             <div class="contact-box">
@@ -505,5 +621,40 @@
         <p>© 2026 Schildersbedrijf Berkel en Rodenrijs. Alle rechten voorbehouden.</p>
     </footer>
 
+    <script href="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Inicjalizacja animacji AOS
+        AOS.init({
+            duration: 800, // czas trwania animacji w ms
+            once: true // animacja wykona się tylko raz przy pierwszym przewinięciu
+        });
+
+        // Obsługa przełączania motywu Dark Mode
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.body.removeAttribute('data-theme');
+                themeToggle.textContent = '🌙';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        });
+
+        // Obsługa interaktywnej galerii Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(imgUrl) {
+            lightboxImg.src = imgUrl;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+    </script>
 </body>
 </html>
