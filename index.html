@@ -6,7 +6,7 @@
     <title>Klussenbedrijf Berkel en Rodenrijs | Vakmanschap & Kwaliteit</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        /* Zmienne CSS - Gecorrigeerd voor een rijker, dieper contrast (Premium Palette) */
+        /* Zmienne CSS - Premium Palette */
         :root {
             --bg-color: #f8fafc;
             --text-color: #0f172a;
@@ -94,10 +94,9 @@
             font-weight: 900;
             color: var(--text-color);
             line-height: 1.1;
-            text-transform: tracking;
         }
         
-        /* Metallic geanimeerd goud/oranje verloop voor premium branding */
+        /* Metallic geanimeerd goud/oranje verloop */
         .logo-main span { 
             background: linear-gradient(90deg, #d97706, #f97316, #f59e0b, #d97706);
             background-size: 200% auto;
@@ -108,25 +107,6 @@
         }
         @keyframes shineText {
             to { background-position: 200% center; }
-        }
-
-        .logo-sub {
-            font-size: 0.65rem;
-            font-weight: 800;
-            color: var(--accent-green);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 5px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .logo-sub::before {
-            content: '';
-            display: inline-block;
-            width: 5px; height: 5px;
-            background-color: var(--accent-orange);
-            border-radius: 50%;
         }
 
         /* Premium Menu Links */
@@ -416,7 +396,7 @@
             border: 1px solid var(--card-border);
             cursor: pointer; position: relative;
         }
-        .gallery-img-container { width: 100%; height: 380px; overflow: hidden; position: relative; }
+        .gallery-img-container { width: 100%; height: 380px; overflow: hidden; position: relative; border-radius: 32px; }
         .gallery-img {
             width: 100%; height: 100%; background-size: cover; background-position: center;
             transform: scale(1.01);
@@ -434,8 +414,6 @@
         
         .gallery-overlay h3 { color: #ffffff; font-size: 1.5rem; margin-bottom: 10px; font-weight: 800; }
         .gallery-overlay p { color: #cbd5e1; font-size: 1rem; line-height: 1.6; }
-        .gallery-static-info { padding: 25px; }
-        .gallery-static-info h3 { color: var(--accent-green); font-size: 1.4rem; margin-bottom: 6px; font-weight: 800; }
 
         /* REVIEWS */
         .google-reviews-box {
@@ -622,7 +600,6 @@
             .nav-container { padding: 0 20px; }
             
             .logo-main { font-size: 1.2rem; }
-            .logo-sub { font-size: 0.58rem; letter-spacing: 1px; margin-top: 3px; }
 
             .nav-links {
                 position: absolute; top: 100%; left: 0; width: 100%;
@@ -651,10 +628,6 @@
             
             .gallery-overlay { display: none !important; }
         }
-        
-        @media (min-width: 991px) {
-            .gallery-static-info { display: none; }
-        }
     </style>
 </head>
 <body>
@@ -663,7 +636,6 @@
         <div class="nav-container">
             <a href="#" class="logo-block">
                 <div class="logo-main">Klussenbedrijf <span>Berkel en Rodenrijs</span></div>
-                <div class="logo-sub">Exclusief Vakmanschap</div>
             </a>
             
             <button class="menu-toggle" id="menuToggleBtn" aria-label="Menu openen">
@@ -683,7 +655,7 @@
     </nav>
 
     <header>
-        <h1>Uw partner voor meesterlijk schilder- en kluswerk</h1>
+        <h1>Uw lokale schildersbedrijf uit berkel en rodenrijs</h1>
         <p>Vakmanschap van het hoogste niveau met 25 jaar ervaring</p>
         <a href="#contact" class="btn-main">Vrijblijvende Offerte</a>
     </header>
@@ -695,7 +667,7 @@
             <p class="section-subtitle">Betrouwbaarheid en pure kwaliteit in Berkel en Rodenrijs</p>
             <div class="about-card">
                 <p>
-                    Wij zijn een ervaren en betrouwbaar schilders- en klussenbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder-, onderhouds- en renovatiewerk voor villa’s, eengezinswoningen, VvE’s en bedrijfspanden.
+                    Wij zijn een ervaren en betrouwbaar schilders- en klussenbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder-, onderhouds- en renovatiewerk voor villa’s, eengezinswoningen, VvE’s and bedrijfspanden.
                 </p>
                 <div class="stats-grid">
                     <div class="stat-item"><h4><span class="counter" data-target="25">0</span>+</h4><p>Jaar Ervaring</p></div>
@@ -711,7 +683,7 @@
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="50">
                     <h3>🏡 Buitenschilderwerk</h3>
-                    <p>Duurzame bescherming van uw gevels, ramen und kozijnen tegen alle Nederlandse weersinvloeden.</p>
+                    <p>Duurzame bescherming van uw gevels, ramen en kozijnen tegen alle Nederlandse weersinvloeden.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>🎨 Binnenschilderwerk</h3>
@@ -760,10 +732,6 @@
                             <p>Volledig onderhoud, reiniging en professioneel lakwerk van kozijnen, deuren en gevelelementen.</p>
                         </div>
                     </div>
-                    <div class="gallery-static-info">
-                        <h3>Buitenschilderwerk</h3>
-                        <p>Professioneel lak- en gevelwerk.</p>
-                    </div>
                 </div>
 
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80')">
@@ -773,10 +741,6 @@
                             <h3>Binnenschilderwerk</h3>
                             <p>Strakke wandafwerking, sauswerk van plafonds en nauwkeurig schilderwerk binnenshuis.</p>
                         </div>
-                    </div>
-                    <div class="gallery-static-info">
-                        <h3>Binnenschilderwerk</h3>
-                        <p>Nauwkeurige wand- en plafondafwerking.</p>
                     </div>
                 </div>
             </div>
@@ -789,7 +753,7 @@
                 <h3>Bekijk ons op Google</h3>
                 <div class="google-stars">★★★★★</div>
                 <p>We streven altijd naar de hoogste kwaliteit en 100% tevredenheid. Benieuwd naar de ervaringen van anderen?</p>
-                <a href="https://www.google.com/search?cs=1&hl=en-NL&q=Klussenbedrijf+tomma+Reviews" target="_blank" class="btn-google-review">
+                <a href="https://www.google.com/search?cs=1&hl=en-NL&sxsrf=ANbL-n5t_8yKee8QG1loAebposUKCiUxDg:1780160342572&q=Klussenbedrijf+tomma+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDAzNLMwNTWwNDQzBzINjIzMNjAyvmKU8c4pLS5OzUtKTSnKzEpTKMnPzU1UCEoty0wtL17EilcaALSsR4hZAAAA&rldimm=10616855091676160226&tbm=lcl&dpr=1.5#lkt=LocalPoiReviews" target="_blank" class="btn-google-review">
                     <svg class="google-btn-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.61c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.65-5.17 3.65-8.58z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.32 14.24c-.24-.72-.38-1.5-.38-2.3a7.83 7.83 0 0 1 .38-2.3V6.49H1.21A11.94 11.94 0 0 0 0 12c0 1.97.48 3.83 1.21 5.51l4.11-3.27z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.18 2.12 1.21 5.51l4.11 3.27c.94-2.85 3.57-4.96 6.68-4.96z"/></svg>
                     <span>Bekijk Google Reviews</span>
                 </a>
