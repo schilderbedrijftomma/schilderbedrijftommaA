@@ -465,7 +465,7 @@
         .lightbox.active .lightbox-img { transform: scale(1); }
         .lightbox-close { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 3.5rem; font-weight: 300; cursor: pointer; }
 
-        /* CONTACT & FORM (ZINTEGROWANA MAPA GOOGLE) */
+        /* CONTACT & FORM */
         .contact-box {
             background: var(--card-bg);
             border-radius: 32px;
@@ -653,6 +653,15 @@
 </head>
 <body>
 
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
     <nav>
         <div class="nav-container">
             <a href="#" class="logo-block">
@@ -685,10 +694,10 @@
 
         <section id="over-ons">
             <h2>Over Ons Bedrijf</h2>
-            <p class="section-subtitle">Betrouwbaarheid i pure kwaliteit in Berkel en Rodenrijs</p>
+            <p class="section-subtitle">Betrouwbaarheid en pure kwaliteit in Berkel en Rodenrijs</p>
             <div class="about-card">
                 <p>
-                    Wij zijn een ervaren en betrouwbaar schilders- en klussenbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder-, onderhouds- en renovatiewerk voor villa’s, eengezinswoningen, VvE’s en bedrijfspanden.
+                    Wij zijn een ervaren en betrouwbaar schilders- en klussenbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder-, onderhouds- en renovatiewerk voor villa’s, eengezinswoningen, VvE’s and bedrijfspanden.
                 </p>
                 <div class="stats-grid">
                     <div class="stat-item"><h4><span class="counter" data-target="25">0</span>+</h4><p>Jaar Ervaring</p></div>
@@ -735,7 +744,7 @@
                 <div class="steps-grid">
                     <div class="step"><div class="step-num">1</div><h4>Aanvraag</h4><p>U neemt contact op en we bespreken uw wensen.</p></div>
                     <div class="step"><div class="step-num">2</div><h4>Offerte</h4><p>U ontvangt een heldere, vrijblijvende prijsopgave.</p></div>
-                    <div class="step"><div class="step-num">3</div><h4>Uitvoering</h4><p>Wij werken netjes, vakkundig en strak op planning.</p></div>
+                    <div class="step"><div class="step-num">3</div><h4>Uitvoering</h4><p>Wij werken netjes, vakkundig i strak op planning.</p></div>
                     <div class="step"><div class="step-num">4</div><h4>Oplevering</h4><p>Gezamenlijke controle voor een 100% topresultaat.</p></div>
                 </div>
             </div>
@@ -764,7 +773,7 @@
                         <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=crop&w=800&q=80')"></div>
                         <div class="gallery-overlay">
                             <h3>Binnenschilderwerk</h3>
-                            <p>Strakke wandafwerking, sauswerk van plafonds en nauwkeurig schilderwerk binnenshuis.</p>
+                            <p>Strakke wandafwerking, sauswerk van plafonds and nauwkeurig schilderwerk binnenshuis.</p>
                         </div>
                     </div>
                     <div class="gallery-caption">
@@ -790,7 +799,7 @@
         </section>
 
         <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close">&times;</span>
+            <span class="lightbox-close">×</span>
             <img class="lightbox-img" id="lightboxImg" src="" alt="Grotere weergave">
         </div>
 
@@ -867,7 +876,7 @@
                     
                     <div class="map-wrapper">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.4025067219574!2d4.480737077189569!3d51.99808937192942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4cb8c9cfa95cb%3A0x633b946013a71107!2sVerveenstraat%2019%2C%202651%20EX%20Berkel%20en%20Rodenrijs!5e0!3m2!1snl!2snl!4v1710000000000!5m2!1snl!2snl" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2456.9678393529243!2d4.47163887714856!3d51.98934577192669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4cbcc9ccbf5cb%3A0x633b942013a71107!2sVerveenstraat%2019%2C%202651%20EX%20Berkel%20en%20Rodenrijs!5e0!3m2!1snl!2snl!4v1717100000000!5m2!1snl!2snl" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
@@ -884,7 +893,7 @@
 
     <div class="modal-overlay" id="contactModal" onclick="closeModal(event)">
         <div class="quick-modal">
-            <span class="modal-close" onclick="closeModal(event, true)">&times;</span>
+            <span class="modal-close" onclick="closeModal(event, true)">×</span>
             <h3>Snel een offerte?</h3>
             <p>Wilt u direct een vakman spreken? Bel ons nu op!</p>
             <a href="tel:+31654967900" class="modal-call-btn">📞 Bel +31 654 967 900</a>
@@ -897,6 +906,18 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // SPRAWDZENIE I USTALENIE MOTYWU PRZED INICJALIZACJĄ STRONY
+        const savedTheme = localStorage.getItem('theme');
+        const themeToggle = document.getElementById('themeToggle');
+        
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeToggle.textContent = '☀️';
+        } else {
+            document.body.removeAttribute('data-theme');
+            themeToggle.textContent = '🌙';
+        }
+
         AOS.init({ duration: 900, once: true, disable: window.innerWidth < 500 });
 
         const menuToggleBtn = document.getElementById('menuToggleBtn');
@@ -921,15 +942,17 @@
             }
         }
 
-        const themeToggle = document.getElementById('themeToggle');
+        // PRZEŁĄCZNIK ZAPAMIĘTUJĄCY WYBÓR W LOCALSTORAGE
         themeToggle.addEventListener('click', () => {
             const currentTheme = document.body.getAttribute('data-theme');
             if (currentTheme === 'dark') {
                 document.body.removeAttribute('data-theme');
                 themeToggle.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
             } else {
                 document.body.setAttribute('data-theme', 'dark');
                 themeToggle.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
             }
             closeMobileMenu();
         });
