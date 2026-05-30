@@ -237,7 +237,7 @@
             margin-top: 10px;
         }
 
-        /* WERKWIJZE (Klasyczny układ boksów) */
+        /* WERKWIJZE */
         .process-box {
             background: #276749;
             color: white;
@@ -270,7 +270,7 @@
             margin-bottom: 10px;
         }
 
-        /* 1. NOWY INTERAKTYWNY SUWAK PRZED / PO (Before/After) */
+        /* INTERAKTYWNY SUWAK PRZED / PO */
         .slider-wrapper {
             max-width: 800px;
             margin: 0 auto 60px auto;
@@ -283,6 +283,7 @@
             overflow: hidden;
             border-radius: 16px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            background-color: #cbd5e0;
         }
         .slider-img {
             position: absolute;
@@ -295,12 +296,12 @@
             pointer-events: none;
         }
         .img-before {
-            background-image: url('image_4c7484.jpg');
+            background-image: url('./image_4c7484.jpg');
             z-index: 1;
         }
         .img-after {
-            background-image: url('image_4c70fd.jpg');
-            width: 50%; /* Kontrolowane przez JS */
+            background-image: url('./image_4c70fd.jpg');
+            width: 50%;
             z-index: 2;
             border-right: 4px solid #dd6b20;
         }
@@ -317,9 +318,9 @@
             top: 0;
             left: 0;
         }
-        /* Stylizacja niewidzialnego suwaka dla różnych przeglądarek */
         .slider-input::-webkit-slider-thumb { -webkit-appearance: none; height: 100%; width: 5px; background: transparent; }
         .slider-input::-moz-range-thumb { height: 100%; width: 5px; background: transparent; border: none; }
+        
         .slider-label {
             position: absolute;
             bottom: 15px;
@@ -337,7 +338,7 @@
         .label-before { left: 15px; }
         .label-after { right: 15px; }
 
-        /* 2. NOWA GALERIA Z FILTROWANIEM */
+        /* GALERIA Z FILTROWANIEM */
         .filter-buttons {
             display: flex;
             justify-content: center;
@@ -370,7 +371,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
             border: 1px solid var(--card-border);
             cursor: pointer;
-            display: block; /* Sterowane przez JS (none/block) */
         }
         .gallery-img {
             height: 280px;
@@ -429,7 +429,7 @@
         }
         .btn-submit:hover { background: #c05621; }
 
-        /* 3. NOWY PRZYCISK PŁYWAJĄCY I OKNO MODAL SZYBKIEGO KONTAKTU */
+        /* PRZYCISK PŁYWAJĄCY I OKNO MODAL SZYBKIEGO KONTAKTU */
         .floating-call-btn {
             position: fixed;
             bottom: 30px;
@@ -532,7 +532,7 @@
             <p class="section-subtitle">Betrouwbaarheid en pure kwaliteit in Berkel en Rodenrijs</p>
             <div class="about-card">
                 <p>
-                    Wij zijn een ervaren en betrouwbaar schildersbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder- en onderhoudswerk voor villa’s, eengezinswoningen, VvE’s en monumentale panden.
+                    Wij zijn een ervaren i betrouwbaar schildersbedrijf gevestigd in Berkel en Rodenrijs. Met ruim 25 jaar ervaring verzorgen wij hoogwaardig schilder- en onderhoudswerk voor villa’s, eengezinswoningen, VvE’s en monumentale panden.
                 </p>
                 <div class="stats-grid">
                     <div class="stat-item"><h4><span class="counter" data-target="25">0</span>+</h4><p>Jaar Ervaring</p></div>
@@ -597,19 +597,19 @@
 
             <div class="gallery-grid">
                 
-                <div class="gallery-item" data-category="buiten" data-aos="zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80')"></div>
+                <div class="gallery-item" data-category="buiten" data-aos="zoom-in" onclick="openLightbox('./image_4c7484.jpg')">
+                    <div class="gallery-img" style="background-image: url('./image_4c7484.jpg')"></div>
                     <div class="gallery-info">
-                        <h3>Modern Landhuis</h3>
-                        <p>Compleet buitenschilderwerk en gevelbescherming.</p>
+                        <h3>Buitenschilderwerk</h3>
+                        <p>Grondige gevelrenovatie en strak lakwerk voor kozijnen.</p>
                     </div>
                 </div>
 
-                <div class="gallery-item" data-category="binnen" data-aos="zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80')"></div>
+                <div class="gallery-item" data-category="binnen" data-aos="zoom-in" onclick="openLightbox('./image_4c70fd.jpg')">
+                    <div class="gallery-img" style="background-image: url('./image_4c70fd.jpg')"></div>
                     <div class="gallery-info">
-                        <h3>Luxe Woonkamer</h3>
-                        <p>Strakke afwerking van wanden en plafonds.</p>
+                        <h3>Binnenschilderwerk</h3>
+                        <p>Nauwkeurig sauswerk i perfecte wandafwerking binnenshuis.</p>
                     </div>
                 </div>
 
@@ -617,15 +617,7 @@
                     <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80')"></div>
                     <div class="gallery-info">
                         <h3>Kozijnen & Deuren</h3>
-                        <p>Hoogglans lakwerk voor een duurzaam resultaat.</p>
-                    </div>
-                </div>
-
-                <div class="gallery-item" data-category="binnen" data-aos="zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="gallery-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80')"></div>
-                    <div class="gallery-info">
-                        <h3>Moderne Keuken</h3>
-                        <p>Schilderwerk bestand tegen vocht en vet.</p>
+                        <p>Hoogglans lakwerk voor een duurzaam en glanzend resultaat.</p>
                     </div>
                 </div>
 
@@ -715,12 +707,10 @@
 
         // 2. OBSŁUGA FILTROWANIA GALERII
         function filterGallery(category) {
-            // Zmiana aktywnego przycisku
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // Filtrowanie elementów
             const items = document.querySelectorAll('.gallery-item');
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
@@ -737,7 +727,7 @@
         function openLightbox(url) { lightboxImg.src = url; lightbox.classList.add('active'); }
         function closeLightbox() { lightbox.classList.remove('active'); }
 
-        // 3. OBSŁUGA MODALA (WYSKAKUJĄCEGO OKIENKA)
+        // 3. OBSŁUGA MODALA
         const contactModal = document.getElementById('contactModal');
         function openModal() { contactModal.classList.add('active'); }
         function closeModal(e, force = false) {
@@ -746,7 +736,7 @@
 
         // 4. OBSŁUGA ANIMOWANYCH STATYSTYK (COUNTER UP)
         const counters = document.querySelectorAll('.counter');
-        const speed = 60; // Im mniejsza liczba, tym szybszy licznik
+        const speed = 60;
 
         const startCounters = () => {
             counters.forEach(counter => {
@@ -766,12 +756,11 @@
             });
         };
 
-        // Wyzwalanie licznika po przewinięciu do sekcji "over-ons"
         const sectionOverOns = document.getElementById('over-ons');
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 startCounters();
-                observer.disconnect(); // Uruchom animację tylko raz
+                observer.disconnect();
             }
         }, { threshold: 0.2 });
         observer.observe(sectionOverOns);
